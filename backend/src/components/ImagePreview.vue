@@ -9,7 +9,7 @@
       <template #item="{element: image, index}">
         <div
           class="relative w-[120px] h-[120px] rounded border border-dashed flex items-center justify-center hover:border-purple-500 overflow-hidden">
-          <img :src="image.url" class="max-w-full max-h-full" :class="image.deleted ? 'opacity-50' : ''">
+          <img :src="$constants.appURL + image.url" class="max-w-full max-h-full" :class="image.deleted ? 'opacity-50' : ''">
           <small v-if="image.deleted"
                  class="absolute left-0 bottom-0 right-0 py-1 px-2 bg-black w-100 text-white justify-between items-center flex">
             To be deleted

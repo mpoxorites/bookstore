@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect requests for assets to the dist/assets folder
+  RewriteCond %{REQUEST_URI} ^/assets/(.*)$
+  RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
+
+  # Redirect root index to the dist/index.html (ensure dist/index.html is served instead of the root index.html)
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^$ dist/index.html [L]
+
+  # Don't rewrite requests for files or directories that actually exist
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Rewrite all other requests to dist/index.html for SPA routing
+  RewriteRule ^(.*)$ dist/index.html [L]
+</IfModule>

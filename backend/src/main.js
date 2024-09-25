@@ -19,3 +19,7 @@ app
 app.config.globalProperties.$filters = {
   currencyEUR
 }
+
+app.config.globalProperties.$constants = {
+  appURL : import.meta.env.VITE_API_BASE_URL
+}
