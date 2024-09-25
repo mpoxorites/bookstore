@@ -21,6 +21,11 @@ class Order extends Model
         return $this->status === OrderStatus::Paid->value;
     }
 
+    public function isUnpaid()
+    {
+        return $this->status === OrderStatus::Unpaid->value;
+    }
+
     public function payment(): HasOne
     {
         return $this->hasOne(Payment::class);
