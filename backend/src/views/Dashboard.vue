@@ -148,9 +148,9 @@ function updateDashboard() {
     loading.value.paidOrders = false;
   })
   axiosClient.get(`/dashboard/income-amount`, {params: {d}}).then(({data}) => {
-    totalIncome.value = new Intl.NumberFormat('en-US', {
+    totalIncome.value = new Intl.NumberFormat('el-GR', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'EUR',
       minimumFractionDigits: 0
     })
       .format(data);

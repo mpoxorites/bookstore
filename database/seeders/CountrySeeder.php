@@ -17,18 +17,23 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
-        $usaStates = [
-            "AL" => 'Alabama',
-            "AK" => 'Alaska',
-            "AZ" => 'Arizona',
-            "AR" => 'Arkansas',
-            "CA" => 'California',
+        $grStates = [
+            'GR-A' => 'Anatoliki Makedonia kai Thraki',
+            'GR-B' => 'Kentriki Makedonia',
+            'GR-C' => 'Dytiki Makedonia',
+            'GR-D' => 'Ipeiros',
+            'GR-E' => 'Thessalia',
+            'GR-F' => 'Ionia Nisia',
+            'GR-G' => 'Dytiki Ellada',
+            'GR-H' => 'Sterea Ellada',
+            'GR-I' => 'Attiki',
+            'GR-J' => 'Peloponnisos',
+            'GR-K' => 'Voreio Aigaio',
+            'GR-L' => 'Notio Aigaio',
+            'GR-M' => 'Kriti'
         ];
         $countries = [
-            ['code' => 'geo', 'name' => 'Georgia', 'states' => null],
-            ['code' => 'ind', 'name' => 'India', 'states' => null],
-            ['code' => 'usa', 'name' => 'United States of America', 'states' => json_encode($usaStates)],
-            ['code' => 'ger', 'name' => 'Germany', 'states' => null],
+            ['code' => 'GR', 'name' => 'Greece', 'states' => json_encode($grStates)],
         ];
         Country::insert($countries);
     }
