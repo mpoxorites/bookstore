@@ -49,7 +49,7 @@ class DashboardController extends Controller
         if ($fromDate) {
             $query->where('created_at', '>', $fromDate);
         }
-        return round($query->sum('total_price'));
+        return round($query->sum('total_price'), 2);
     }
 
     public function ordersByCountry()
